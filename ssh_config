@@ -1,0 +1,45 @@
+Host dev
+    Hostname dev109.meraki.com
+    User vsai
+    ForwardAgent yes
+
+Host dev102
+    Hostname dev102.meraki.com
+    User vsai
+    ForwardAgent yes
+
+Host ubu
+#    Hostname 10.3.9.36
+#    Hostname 10.4.1.104
+    Hostname 10.3.12.102
+    User vsai
+    ForwardAgent yes
+    ProxyCommand ssh sf100 -W %h:%p
+
+Host sf100 eng.meraki.com if-that-makes-sense
+    Hostname eng.meraki.com
+    User vsai
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+#######
+# sdg0 & dal0
+# must be SSHed into dev* machines
+# Note: I'm not adding a proxy because I don't want it to be accessible through my personal laptop
+#######
+Host sdg0
+    Hostname sdg0.meraki.com
+    User vsai
+    ForwardAgent yes
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 1h
+
+Host dal0
+    Hostname dal0.meraki.com
+    User vsai
+    ForwardAgent yes
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 1h
