@@ -38,3 +38,7 @@ zeusTestFile() {
   cd ~/co/manage; script/zeus test $1 -fd -rdebugger
 }
 alias testit=zeusTestFile
+
+alias psqlstart='brew services start postgresql'
+alias psqlstop='brew services stop postgresql'
+alias psqlrestart='brew services restart postgresql'
