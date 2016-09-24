@@ -111,6 +111,7 @@ endfor
 
 " ====== status
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ %=[L%l,C%v]\ \ [%2p%%\ of\ %L]
+set laststatus=2
 set statusline=%F%m%r%h%w\ %=[L%l,C%v]\ \ [%2p%%\ of\ %L]
 
 "              | | | | |           |              |    |   |   |       |          + total lines

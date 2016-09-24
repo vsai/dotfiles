@@ -42,3 +42,5 @@ alias testit=zeusTestFile
 alias psqlstart='brew services start postgresql'
 alias psqlstop='brew services stop postgresql'
 alias psqlrestart='brew services restart postgresql'
+
+alias cdp='cd ~/Documents/projects/'
