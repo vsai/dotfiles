@@ -44,8 +44,9 @@ export PS1="\[$RED\]vsai \[$YELLOW\]\W \$ \[$GREEN"
 #make directory colors ligher
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 
-
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/usr/texbin
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/X11/bin:/usr/local/git/bin:/usr/texbin:$PATH"
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
@@ -66,13 +67,16 @@ fi
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
 # add git autocompletion to command line
 test -f ~/.git-completion.bash && . $_
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/phantomjs/lib/phantom/bin
+#export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/casperjs/bin
+

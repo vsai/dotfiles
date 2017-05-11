@@ -44,3 +44,5 @@ alias psqlstop='brew services stop postgresql'
 alias psqlrestart='brew services restart postgresql'
 
 alias cdp='cd ~/Documents/projects/'
+
+alias cdpp='cd ~/Documents/projects/propty/'
