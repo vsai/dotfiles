@@ -15,6 +15,12 @@ alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
 
+# alias to push from cdpp staging br -> staging repo master branch
+alias gpstaging='cdpp; git push staging development:master'
+# alias to push from cdpp master br -> production repo master branch
+alias gpprod='cdpp; git push production master:master'
+
+
 alias sqltd='~/co/manage/cpp/sqlt/sqlt development-lt 5458'
 
 alias less='less -R'
