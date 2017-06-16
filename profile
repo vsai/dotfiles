@@ -80,3 +80,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/phantomjs/lib/phantom/bin
 #export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/casperjs/bin
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/path.bash.inc' ]; then source '/Users/vishalsaidaswani/Documents/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'; fi
