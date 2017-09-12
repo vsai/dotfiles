@@ -52,3 +52,4 @@ alias psqlrestart='brew services restart postgresql'
 alias cdp='cd ~/Documents/projects/'
 
 alias cdpp='cd ~/Documents/projects/propty/'
+alias cdeh='cd ~/Documents/projects/easyhomey/'
