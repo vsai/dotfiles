@@ -73,16 +73,16 @@ export NVM_DIR="$HOME/.nvm"
 # add git autocompletion to command line
 test -f ~/.git-completion.bash && . $_
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 #export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/phantomjs/lib/phantom/bin
 #export PATH=$PATH:/Users/vishalsaidaswani/buildingscraper/node_modules/casperjs/bin
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/path.bash.inc' ]; then source '/Users/vishalsaidaswani/Documents/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
