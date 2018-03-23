@@ -53,3 +53,5 @@ alias cdp='cd ~/Documents/projects/'
 
 alias cdpp='cd ~/Documents/projects/propty/'
 alias cdeh='cd ~/Documents/projects/easyhomey/'
+alias cdsy='cd ~/Documents/projects/synergy/synergizer/'
+alias cdsm='cd ~/Documents/projects/synergy/synergy-mobile/'
