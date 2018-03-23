@@ -39,7 +39,12 @@ BCYAN='\e[46m'
 BWHITE='\e[47m'
 
 force_color_prompt=yes
-export PS1="\[$RED\]vsai \[$YELLOW\]\W \$ \[$GREEN"
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\[$RED\]vsai \[$YELLOW\]\W\[$CYAN\]\$(parse_git_branch) \[$YELLOW\]\$ \[$GREEN"
 
 #make directory colors ligher
 export LSCOLORS='Exfxcxdxbxegedabagacad'
