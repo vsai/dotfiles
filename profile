@@ -57,6 +57,15 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 alias cunix="ssh vhd@unix.andrew.cmu.edu"
 
+### Setup the Android SDK + JAVA_HOME
+#export JAVA_HOME=$(/usr/libexec/java_home)
+#export ANDROID_HOME=/usr/local/share/android-sdk
+#export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_HOME=/Users/vishalsaidaswani/Library/Android/sdk
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -89,5 +98,6 @@ if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
