@@ -14,11 +14,13 @@ alias glp='git log -p'
 alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
+alias editcreds='EDITOR=vi rails credentials:edit'
 
-# alias to push from cdpp staging br -> staging repo master branch
-alias gpstaging='cdpp; git push staging development:master'
-# alias to push from cdpp master br -> production repo master branch
-alias gpprod='cdpp; git push production master:master'
+# git push origin local-name:remote-name
+# alias to push from development br -> staging repo master branch
+alias gpstaging='git push staging development:master'
+# alias to push from development br -> production repo master branch
+alias gpprod='git push production development:master'
 
 
 alias sqltd='~/co/manage/cpp/sqlt/sqlt development-lt 5458'
