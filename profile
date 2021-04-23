@@ -77,12 +77,18 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Use pyenv version of python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # MacPorts Installer addition on 2015-02-18_at_14:23:42: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add git autocompletion to command line
 test -f ~/.git-completion.bash && . $_
@@ -98,6 +104,6 @@ if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$HOME/.rvm/gems/ruby-2.4.1/bin:$PATH"
+export PATH="$HOME/.rvm/gems/ruby-2.6.5/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
