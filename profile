@@ -107,6 +107,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.rvm/gems/ruby-2.6.5/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-. "$HOME/.cargo/env"
+
+export PATH="/Users/vishalsaidaswani/.avm/bin:$PATH"
 
 export PATH="/Users/vishalsaidaswani/.local/share/solana/install/active_release/bin:$PATH"
+. "$HOME/.cargo/env"
