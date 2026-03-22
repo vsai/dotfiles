@@ -102,13 +102,30 @@ if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/path.bash.inc' ]; th
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'; fi
 
+export PATH="/Users/vishalsaidaswani/.avm/bin:$PATH"
+
+export PATH="/Users/vishalsaidaswani/.local/share/solana/install/active_release/bin:$PATH"
+. "$HOME/.cargo/env"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+. "$HOME/.cargo/env"
+
+export PATH="$PATH:/Users/vishalsaidaswani/.foundry/bin"
+
+export PATH="/Users/vishalsaidaswani/.local/share/solana/install/active_release/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.rvm/gems/ruby-2.6.5/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export PATH="/Users/vishalsaidaswani/.avm/bin:$PATH"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
-export PATH="/Users/vishalsaidaswani/.local/share/solana/install/active_release/bin:$PATH"
-. "$HOME/.cargo/env"
+# add claude
+export PATH="$HOME/.local/bin:$PATH"
+
+. "/Users/vishalsaidaswani/.deno/env"

@@ -10,6 +10,7 @@ alias glp='git log -p'
 alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
+alias gprom='git pull --rebase origin main'
 alias editcreds='EDITOR=vi rails credentials:edit'
 
 # git push origin local-name:remote-name
@@ -36,9 +37,36 @@ zeusTestFile() {
 }
 alias testit=zeusTestFile
 
-alias psqlstart='brew services start postgresql'
-alias psqlstop='brew services stop postgresql'
-alias psqlrestart='brew services restart postgresql'
+alias psqlstart='brew services start postgresql@14'
+alias psqlstop='brew services stop postgresql@14'
+alias psqlrestart='brew services restart postgresql@14'
 
 alias cdp='cd ~/Documents/projects/'
 
+alias solanaconfigsetlocal='solana config set --url localhost'
+alias solanaconfigget='solana config get'
+alias gitremotepruneorigin='git remote prune origin'
+
+alias createvenv='python3 -m venv'
+alias outputvenv='pip3 freeze > requirements.txt'
+
+gcloudHelpOutput() {
+  echo 'list all configurations: gcloud config configurations list'
+  echo 'activate bonkbotbeta: gcloud config configurations activate bonkbotbeta'
+  echo 'activate whatsappautomator: gcloud config configurations activate whatsapp'
+  gcloud config list
+}
+alias gcphelp=gcloudHelpOutput
+alias gcloudauth='gcloud auth application-default login'
+alias gcpauth='gcloud auth login'
+alias gcpwhatsapp='gcloud config configurations activate whatsapp'
+alias gcpbonkbot='gcloud config configurations activate bonkbotbeta'
+alias gcpsshwhatsapp='gcloud compute ssh whatsapp-automator'
+
+alias bbredis='redis-cli -h 10.9.113.2'
+alias bbpsql='psql -h 10.9.112.27 -p 5432 -U vish bonkbot'
+alias deploywebapi='./deploy/deploy-bonkbot.sh -b webapi-beta'
+alias deploybeta='./deploy/deploy-bonkbot.sh -b beta'
+#git worktree remove directory/
+
+alias gcpsshsignerbeta='gcloud compute ssh signer-local --project bonkbotbeta'

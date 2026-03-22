@@ -105,8 +105,12 @@ for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
 endfor
 
 " ======= Color =======
+"https://phoenixnap.com/kb/vim-color-schemes
 ":colo darkblue
-:colo delek
+":colo delek
+":colo industry
+":colo murphy
+:colo default
 
 
 " ====== status
