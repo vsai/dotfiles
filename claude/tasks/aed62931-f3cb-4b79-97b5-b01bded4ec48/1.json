@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Check PR eligibility for code review",
+  "description": "Use a Haiku agent to check if the PR is closed, draft, doesn't need review, or already has a review from Claude",
+  "activeForm": "Checking PR eligibility",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

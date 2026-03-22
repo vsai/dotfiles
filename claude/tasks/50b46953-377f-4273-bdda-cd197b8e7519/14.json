@@ -1,0 +1,9 @@
+{
+  "id": "14",
+  "subject": "Add loading states and error boundaries for all modules",
+  "description": "Create loading.tsx skeleton screens and error.tsx error boundaries for portfolio, insta-watchers, and poly-arb routes.",
+  "activeForm": "Adding loading states and error boundaries",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

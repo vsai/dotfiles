@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Add root-level turbo test script that runs all package tests in parallel",
+  "description": "Add a `test` pipeline to turbo.json and a `pnpm test` root script that runs tests across all packages in parallel. Must handle packages without tests gracefully (signer has a stale jest script with no test files). Ensure it works without database connection issues — may need to mock or skip DB-dependent tests in CI-like runs.",
+  "activeForm": "Setting up root-level turbo test pipeline",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

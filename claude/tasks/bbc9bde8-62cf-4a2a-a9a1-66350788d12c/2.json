@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Create a self-review skill that spawns multiple reviewers before PR creation",
+  "description": "Write a Claude Code skill (slash command) for self-reviewing code before creating a PR. It should:\n- Diff the current branch against main\n- Spawn multiple reviewer sub-agents (configurable via arg, e.g. `/self-review 3`)\n- Each reviewer focuses on a different perspective (correctness, security, style/patterns)\n- Aggregate findings into a summary\n- Optionally proceed to PR creation after review passes",
+  "activeForm": "Creating self-review skill",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

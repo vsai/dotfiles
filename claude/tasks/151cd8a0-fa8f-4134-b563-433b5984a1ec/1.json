@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Add dependencies to api/Cargo.toml",
+  "description": "Add signer, nats, jito, sqlx, serde_json, chrono dependencies to the api crate",
+  "activeForm": "Adding api dependencies",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

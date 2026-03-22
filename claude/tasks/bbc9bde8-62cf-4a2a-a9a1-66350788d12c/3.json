@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Write a skill to invoke Codex",
+  "description": "Create a Claude Code skill that invokes OpenAI Codex (likely via CLI or API). Determine the right integration point — whether it's spawning a Codex CLI process, calling the API, or wrapping an existing tool. Skill should pass context (current file, selection, or task description) to Codex and return results.",
+  "activeForm": "Creating Codex invocation skill",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

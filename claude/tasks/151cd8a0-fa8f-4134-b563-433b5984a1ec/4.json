@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Update nami/Cargo.toml, config.rs, setup_util.rs",
+  "description": "Add new dependencies to nami, add config fields for signer/db/jito, initialize ExecuteSwapService in setup_util.rs",
+  "activeForm": "Updating nami configuration",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

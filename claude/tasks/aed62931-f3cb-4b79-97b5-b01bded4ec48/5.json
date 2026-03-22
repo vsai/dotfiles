@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Score issues with Haiku agents",
+  "description": "For each issue found, launch a parallel Haiku agent to score confidence (0-100) on whether the issue is real or false positive",
+  "activeForm": "Scoring issues",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

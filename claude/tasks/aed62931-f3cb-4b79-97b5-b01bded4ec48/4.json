@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Run 5 parallel code review agents",
+  "description": "Launch 5 Sonnet agents in parallel to review: CLAUDE.md compliance, obvious bugs, git history context, previous PR comments, and code comment compliance",
+  "activeForm": "Running parallel code reviews",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

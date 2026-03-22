@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Get list of relevant CLAUDE.md files",
+  "description": "Use a Haiku agent to identify the root CLAUDE.md and any CLAUDE.md files in directories modified by the PR",
+  "activeForm": "Identifying CLAUDE.md files",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Create .env bootstrap script for quick onboarding and worktree support",
+  "description": "Clean up the local .env setup so new developers (and git worktrees) can get started quickly. Create a script that:\n- Resets .env to beta environment defaults from deploy/env/\n- Pre-populates local-specific overrides at the top (DB host, ports, etc.)\n- Works seamlessly with git worktrees (no manual .env copying)\n- Possibly uses .env.example as a template with a setup script that fills in values\n- Add instructions to README or HOW_TO_DEV_LOCAL.md",
+  "activeForm": "Creating .env bootstrap script",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

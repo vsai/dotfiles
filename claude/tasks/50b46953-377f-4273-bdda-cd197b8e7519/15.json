@@ -1,0 +1,9 @@
+{
+  "id": "15",
+  "subject": "Add toast notifications for async operations",
+  "description": "Install shadcn sonner/toast, wire up toast notifications for upload success, errors, handle add/remove, etc.",
+  "activeForm": "Adding toast notifications",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

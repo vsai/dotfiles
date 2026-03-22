@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Add Swagger/OpenAPI documentation for the web API",
+  "description": "Generate Swagger/OpenAPI spec from the inversify-express-utils controllers so frontend can integrate with the API. 21 controllers exist in servers/bonkbot/src/api/controllers/ with TypeScript interfaces in controllers/interfaces/. Current validation uses express-validator. Need to pick an approach (Zod + zod-to-openapi, swagger-jsdoc, or static analysis) and build a pipeline that generates the spec at build time. Should serve Swagger UI at an endpoint for dev use.",
+  "activeForm": "Adding Swagger API documentation",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

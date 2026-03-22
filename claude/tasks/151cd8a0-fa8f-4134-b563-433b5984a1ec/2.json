@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Create execute_swap module with types, signer_service, db, publisher, service",
+  "description": "Create the api/src/execute_swap/ module with all 5 submodules: types.rs, signer_service.rs, db.rs, publisher.rs, service.rs, and mod.rs",
+  "activeForm": "Creating execute_swap module",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

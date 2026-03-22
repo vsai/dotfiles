@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Get PR summary",
+  "description": "Use a Haiku agent to view the PR and return a summary of the change",
+  "activeForm": "Getting PR summary",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Update api/src/endpoints.rs, lib.rs, server.rs for new endpoint",
+  "description": "Add ExecuteSwap variant to endpoint enum, add mod execute_swap to lib.rs, add route and handler to server.rs",
+  "activeForm": "Updating api module structure",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -105,7 +105,6 @@ if [ -f '/Users/vishalsaidaswani/Documents/google-cloud-sdk/completion.bash.inc'
 export PATH="/Users/vishalsaidaswani/.avm/bin:$PATH"
 
 export PATH="/Users/vishalsaidaswani/.local/share/solana/install/active_release/bin:$PATH"
-. "$HOME/.cargo/env"
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 

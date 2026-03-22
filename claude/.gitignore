@@ -1,0 +1,30 @@
+# Auth and secrets
+history.jsonl
+*.backup
+mcp-needs-auth-cache.json
+policy-limits.json
+
+# Session and ephemeral data
+sessions/
+shell-snapshots/
+paste-cache/
+file-history/
+debug/
+cache/
+downloads/
+backups/
+plans/
+
+# Telemetry and stats
+telemetry/
+stats-cache.json
+statsig/
+usage-data/
+
+# Per-project data (may contain secrets)
+projects/
+
+# Auto-managed
+plugins/
+todos/
+session-env/

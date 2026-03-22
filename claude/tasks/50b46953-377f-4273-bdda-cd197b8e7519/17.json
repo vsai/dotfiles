@@ -1,0 +1,9 @@
+{
+  "id": "17",
+  "subject": "Add trade history import to Portfolio Tracker",
+  "description": "Add a trade history import feature to the Portfolio Tracker module. This allows users to import their historical trades (buys/sells with dates, prices, quantities) in addition to current holdings. This enables:\n- Detailed breakdown of what was bought and when\n- Retroactive analysis of which trades were made with which signals\n- P&L tracking per trade\n- Timeline view of trade history\n\nRequires:\n- New DB table (e.g. portfolio_trades) with columns: ticker, action (buy/sell), shares, price, date, signal/notes\n- Migration file\n- Parse logic for trade history Excel/CSV format\n- UI for importing and viewing trade history\n- Update database.ts types",
+  "activeForm": "Adding trade history import",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

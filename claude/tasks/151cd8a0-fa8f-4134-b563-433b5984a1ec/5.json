@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Build and fix compilation errors",
+  "description": "Run cargo build -p api -p nami and fix any compilation errors",
+  "activeForm": "Building and fixing errors",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

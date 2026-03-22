@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Fix pre-push hook hanging on lint and build in git worktrees",
+  "description": "The husky pre-push hook hangs when running lint and build before pushing to GitHub, particularly in git worktree setups. Known issue: stdin inheritance causes the hook process to hang. Investigate root cause and fix — likely needs stdin redirection (`< /dev/null`), timeouts, or restructuring the hook script. Test in both main repo and worktree contexts.",
+  "activeForm": "Fixing pre-push hook hanging issue",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "16",
+  "subject": "Responsive design pass and final build verification",
+  "description": "Ensure sidebar collapses on mobile, tables scroll horizontally, split-screen stacks vertically. Final build + lint + typecheck.",
+  "activeForm": "Polishing responsive design",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

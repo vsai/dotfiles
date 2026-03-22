@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Filter and post final review",
+  "description": "Filter issues with score >= 80, re-check eligibility, and post comment on PR",
+  "activeForm": "Posting final review",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

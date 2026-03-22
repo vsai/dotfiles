@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Improve test documentation with conventions and ordering guidelines",
+  "description": "Update docs/TESTING.md (or create if needed) with clearer conventions for writing tests, including expected ordering of test blocks (arrange/act/assert, describe/it structure, setup/teardown placement). Motivated by Michal's PR not following expected test ordering. Document patterns already used in the codebase so contributors follow consistent structure.",
+  "activeForm": "Improving test documentation",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}
