@@ -70,3 +70,33 @@ alias deploybeta='./deploy/deploy-bonkbot.sh -b beta'
 #git worktree remove directory/
 
 alias gcpsshsignerbeta='gcloud compute ssh signer-local --project bonkbotbeta'
+
+createWorktree() {
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Error: not inside a git repository" >&2
+    return 1
+  fi
+  local branch dir
+  printf "Branch name: "
+  read -r branch
+  printf "Relative directory: "
+  read -r dir
+  if [ -z "$branch" ] || [ -z "$dir" ]; then
+    echo "Error: branch and directory are required" >&2
+    return 1
+  fi
+  git worktree add -b "$branch" "$dir"
+}
+alias create-worktree=createWorktree
+
+removeWorktree() {
+  local dir
+  printf "Relative directory: "
+  read -r dir
+  if [ -z "$dir" ]; then
+    echo "Error: directory is required" >&2
+    return 1
+  fi
+  git worktree remove "$dir"
+}
+alias remove-worktree=removeWorktree

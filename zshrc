@@ -1,5 +1,8 @@
 # ~/.zshrc — interactive shell config
 
+# ── Terminfo (needed for Homebrew ncurses/tmux) ─────────
+export TERMINFO_DIRS=/opt/homebrew/opt/ncurses/share/terminfo:/usr/share/terminfo
+
 # ── Completion ──────────────────────────────────────────
 autoload -Uz compinit
 compinit -u
@@ -12,6 +15,7 @@ setopt PROMPT_SUBST
 PROMPT='%F{red}vsai %F{yellow}%1~%F{cyan}${vcs_info_msg_0_} %F{yellow}$ %f'
 
 # Directory colors
+export CLICOLOR=1
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 
 # ── Aliases ─────────────────────────────────────────────
@@ -48,8 +52,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # ── Deno ────────────────────────────────────────────────
 . "$HOME/.deno/env"
 
-# ── Yarn ────────────────────────────────────────────────
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# ── Yarn (via Homebrew) ─────────────────────────────────
+# Homebrew yarn is at /opt/homebrew/bin/yarn (already in PATH via brew shellenv)
 
 # ── Claude CLI ──────────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
@@ -58,3 +62,14 @@ export PATH="$HOME/.local/bin:$PATH"
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - zsh)"
 fi
+
+# bun completions
+[ -s "/Users/vishalsaidaswani/.bun/_bun" ] && source "/Users/vishalsaidaswani/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/vishalsaidaswani/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

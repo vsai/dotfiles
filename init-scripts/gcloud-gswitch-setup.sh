@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # gswitch - Fast GCP account/project switcher
-# Source this file in your shell: source ~/gcloudsetups/gswitch.sh
+# Source this file in your shell: source ~/dotfiles/init-scripts/gcloud-gswitch-setup.sh
 
 # ── Colors ──────────────────────────────────────────────────────────
 _gs_bold='\033[1m'
@@ -25,7 +25,7 @@ gswitch() {
 
   # Interactive mode
   local configs
-  configs=$(gcloud config configurations list --format="table[no-heading](name,is_active.yesno(yes='*',no=' '),properties.core.account,properties.core.project)" 2>/dev/null)
+  configs=$(gcloud config configurations list --format="csv[no-heading](name,is_active.yesno(yes='*',no=' '),properties.core.account,properties.core.project)" 2>/dev/null)
 
   if [[ -z "$configs" ]]; then
     echo "No configurations found. Run gnew to create one."
@@ -48,17 +48,16 @@ gswitch() {
     # Numbered menu fallback
     echo -e "${_gs_bold}  #  NAME              ACCOUNT                   PROJECT${_gs_reset}"
     echo    "  ─  ────              ───────                   ───────"
-    local i=1
+    local i=1 name active account project marker
     local names=()
     while IFS= read -r line; do
-      local name active account project
-      name=$(echo "$line" | awk '{print $1}')
-      active=$(echo "$line" | awk '{print $2}')
-      account=$(echo "$line" | awk '{print $3}')
-      project=$(echo "$line" | awk '{print $4}')
+      name=$(echo "$line" | cut -d',' -f1)
+      active=$(echo "$line" | cut -d',' -f2 | tr -d '"' | tr -d "'")
+      account=$(echo "$line" | cut -d',' -f3)
+      project=$(echo "$line" | cut -d',' -f4)
       names+=("$name")
 
-      local marker="  "
+      marker="  "
       if [[ "$active" == "*" ]]; then
         marker="${_gs_green}*${_gs_reset} "
       fi
@@ -68,10 +67,10 @@ gswitch() {
     done <<< "$configs"
 
     echo ""
-    read -rp "Select config [1-$((i-1))]: " choice
+    read -r "choice?Select config [1-$((i-1))]: "
 
     if [[ "$choice" =~ ^[0-9]+$ ]] && (( choice >= 1 && choice < i )); then
-      gcloud config configurations activate "${names[$((choice-1))]}" 2>/dev/null
+      gcloud config configurations activate "${names[$choice]}" 2>/dev/null
       _gs_show_active
     else
       echo "Cancelled."
@@ -86,7 +85,7 @@ gnew() {
   local project="$3"
 
   if [[ -z "$name" ]]; then
-    read -rp "Config name (short, memorable): " name
+    read -r "name?Config name (short, memorable): "
   fi
 
   if gcloud config configurations describe "$name" &>/dev/null; then
@@ -108,13 +107,13 @@ gnew() {
     done <<< "$accounts"
 
     echo -e "  ${_gs_cyan}$i${_gs_reset}  ${_gs_dim}+ Login new account${_gs_reset}"
-    read -rp "Select account [1-$i]: " achoice
+    read -r "achoice?Select account [1-$i]: "
 
     if [[ "$achoice" == "$i" ]]; then
       gcloud auth login --no-launch-browser 2>/dev/null
       account=$(gcloud auth list --filter="status:ACTIVE" --format="value(account)" 2>/dev/null)
     elif [[ "$achoice" =~ ^[0-9]+$ ]] && (( achoice >= 1 && achoice < i )); then
-      account="${acct_list[$((achoice-1))]}"
+      account="${acct_list[$achoice]}"
     else
       echo "Cancelled."
       return 1
@@ -136,15 +135,15 @@ gnew() {
         ((i++))
       done <<< "$projects"
 
-      read -rp "Select project [1-$((i-1))] or type ID: " pchoice
+      read -r "pchoice?Select project [1-$((i-1))] or type ID: "
 
       if [[ "$pchoice" =~ ^[0-9]+$ ]] && (( pchoice >= 1 && pchoice < i )); then
-        project="${proj_list[$((pchoice-1))]}"
+        project="${proj_list[$pchoice]}"
       else
         project="$pchoice"
       fi
     else
-      read -rp "No projects found. Enter project ID manually: " project
+      read -r "project?No projects found. Enter project ID manually: "
     fi
   fi
 
@@ -189,9 +188,9 @@ gproject() {
         printf "  ${_gs_cyan}%d${_gs_reset}  %s\n" "$i" "$p"
         ((i++))
       done <<< "$projects"
-      read -rp "Select project [1-$((i-1))]: " pchoice
+      read -r "pchoice?Select project [1-$((i-1))]: "
       if [[ "$pchoice" =~ ^[0-9]+$ ]] && (( pchoice >= 1 && pchoice < i )); then
-        project="${proj_list[$((pchoice-1))]}"
+        project="${proj_list[$pchoice]}"
       fi
     fi
   fi
