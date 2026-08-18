@@ -100,3 +100,38 @@ removeWorktree() {
   git worktree remove "$dir"
 }
 alias remove-worktree=removeWorktree
+
+alias ssh-openclaw-teams='gcloud compute ssh --zone "us-central1-f" "openclaw-team" --project "cohesive-sign-486215-q0"'
+sshDevVm() {
+  local action="$1"
+  local name="$2"
+  local zone="${3:-us-central1-a}"
+  local project="agent-force-501910"
+
+  if [ -z "$action" ] || [ -z "$name" ]; then
+    echo "Usage: ssh-dev-vm <start|stop|connect|status> <vm-name> [zone]" >&2
+    return 1
+  fi
+
+  case "$action" in
+    start)
+      gcloud compute instances start "$name" --zone "$zone" --project "$project"
+      ;;
+    stop)
+      gcloud compute instances stop "$name" --zone "$zone" --project "$project"
+      ;;
+    connect)
+      gcloud compute ssh --zone "$zone" "$name" --project "$project"
+      ;;
+    status)
+      gcloud compute instances describe "$name" --zone "$zone" --project "$project"
+      ;;
+    *)
+      echo "Unknown action: $action (expected start|stop|connect|status)" >&2
+      return 1
+      ;;
+  esac
+}
+alias ssh-dev-vm=sshDevVm
+
+alias fixmouse='printf "\e[?1000l\e[?1002l\e[?1003l\e[?1006l\e[?1015l"'
